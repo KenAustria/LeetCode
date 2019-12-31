@@ -1,26 +1,53 @@
+// PSUEDO FOR PRACTICE
+// condition for one element array
+// define maxProfit
+// define maxStock; max number between last 2 indices
+// iterate from 2nd-to-last index, decrement
+	// define profit
+	// define maxStock
+	// define maxProfit
+// maxProfit
+
+
+// Runtime: 60ms
+// Time complexity:
+// Memory: 35.4MB
+var maxProfit = function(prices) {
+	// only one element, nothing to compare
+	if (prices.length < 2) {
+		return 0;
+	}
+
+	let maxProfit = 0;
+	let maxStock = Math.max(prices[prices.length - 1], prices[prices.length - 2]);
+
+	for (let i = prices.length - 2; i > -1; i--) {
+		let profit = maxStock - prices[i];
+		maxStock = Math.max(maxStock, prices[i]);
+		maxProfit = Math.max(profit, maxProfit);
+	}
+	return maxProfit;
+};
+
+
 // Runtime: 880ms
 // Time complexity:
-const maxProfit = function(prices) {
-	// declare variables
-	let profit
-	let maximumProfit = 0
+// Memory: 41.6MB
+// const maxProfit = function(prices) {
+// 	let profit
+// 	let maximumProfit = 0;
 
-	// iterate array, keeping track of the index
-	prices.forEach(function(buy, index) {
-		// save subarray reference
-		let rest = prices.slice(index + 1)
-		// if subarray exist, find the biggest value
-		if (rest) {
-			let sell = Math.max(...rest)
-			// calculate profit
-			sell > buy ? profit = sell - buy : null
-			// check if profit is greater than maxProfit
-			profit > maximumProfit ? maximumProfit = profit : null
-		}
-	});
+// 	prices.forEach(function(buy, index) {
+// 		let rest = prices.slice(index + 1);
+// 		if (rest) {
+// 			let sell = Math.max(...rest)
+// 			sell > buy ? profit = sell - buy : null
+// 			profit > maximumProfit ? maximumProfit = profit : null
+// 		}
+// 	});
 
-	return maximumProfit;
-}
+// 	return maximumProfit;
+// }
 
-console.log(maxProfit([7,1,5,3,6,4]));
-console.log(maxProfit([7,6,4,3,1]));
+console.log(maxProfit([7,1,5,3,6,4])); // 5
+console.log(maxProfit([7,6,4,3,1])); // 0
