@@ -1,11 +1,3 @@
-// PSUEDO FOR PRACTICE
-// declare host hash
-// populate host hash, map each array element to its index
-// initiate loop
-// diff is the second number to lookup in the object
-// if diff exist in our object AND it isn't our current index to prevent duplicates
-
-
 // Runtime: 56ms
 // Time complexity: O(n)
 // Memory: 35MB
