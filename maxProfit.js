@@ -1,16 +1,5 @@
-// PSUEDO FOR PRACTICE
-// condition for one element array
-// define maxProfit
-// define maxStock; max number between last 2 indices
-// iterate from 2nd-to-last index, decrement
-	// define profit
-	// define maxStock
-	// define maxProfit
-// maxProfit
-
-
 // Runtime: 60ms
-// Time complexity:
+// Time complexity: O(N)
 // Memory: 35.4MB
 var maxProfit = function(prices) {
 	// only one element, nothing to compare
