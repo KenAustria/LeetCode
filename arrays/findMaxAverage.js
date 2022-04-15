@@ -1,6 +1,6 @@
 // Runtime: 94ms
-// Time Complexity:
-// Space Complexity:
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 // Memory: 55.9MB
 const findMaxAverage = (nums, k) => {
   // find sum of current window
@@ -12,10 +12,11 @@ const findMaxAverage = (nums, k) => {
   let maxWindowIdx = nums.length - k + 1;
 
   for (let i = 1; i < maxWindowIdx; i++) {
-    let y = nums[i - 1];
+    // previous index value to be excluded
+    let notIncludedInWindowSum = nums[i - 1];
     // last idx value of current windwow
     let currWindowIdxVal = nums[i + k - 1];
-    currWindowSum = currWindowSum - y + currWindowIdxVal;
+    currWindowSum = currWindowSum - notIncludedInWindowSum + currWindowIdxVal;
     maxWindowSum = Math.max(maxWindowSum, currWindowSum);
   }
   return maxWindowSum / k;
