@@ -3,13 +3,13 @@
 // Space Complexity: O(1)
 // Memory: 66.1MB
 const containsNearbyDuplicate = (nums, k) => {
-  const map = new Map();
+  const numsMap = new Map();
 
   for (let i = 0; i < nums.length; i++) {
-    if (map.hasOwnProperty(nums[i]) && i - map.get(nums[i] <= k)) {
+    if (numsMap.hasOwnProperty(nums[i]) && i - numsMap.get(nums[i] <= k)) {
       return true;
     }
-    map.set(nums[i], i);
+    numsMap.set(nums[i], i);
   }
   return false;
 };
