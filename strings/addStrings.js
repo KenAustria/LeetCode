@@ -24,3 +24,9 @@ const addStrings = function(num1, num2) {
 console.log(addStrings("1", "9")); // "10"
 console.log(addStrings("8", "3")); // "11"
 console.log(addStrings("8", "12")); // "20"
+
+
+// let num1 = "18.6"
+// let num2 = "12.5"
+// let result = (+num1) + (+num2)
+// console.log(result)
