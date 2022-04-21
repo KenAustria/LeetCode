@@ -9,7 +9,7 @@ const lengthOfLongestSubstring = function(s) {
   for (let i = 0; i < s.length; i++) {
 		// prevent dups, if the current char was seen, 
 		// move the start to (1 + the last index of this char)
-		if (seen.has(s[i])) start = Math.max(seen.get(s[i]) + 1, start)
+		if (seen.has(s[i])) start = Math.max(seen.get(s[i] + 1, start))
     seen.set(s[i], i)
     max = Math.max(i - start + 1, max)
   }
