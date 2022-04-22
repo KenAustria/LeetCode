@@ -8,10 +8,10 @@ const findMaxAverage = (nums, k) => {
     .slice(0, k)
     .reduce((currWindowVal, currWindowIdx) => currWindowVal + currWindowIdx, 0);
   let maxWindowSum = currWindowSum;
-  // k length is equal to max window index, (k = 4 == maxWindowIdx = 3)
-  let maxWindowIdx = nums.length - k + 1;
+  // k length is equal to end window index, (k = 4 == endWindowIdx = 3)
+  let endWindowIdx = nums.length - k + 1;
 
-  for (let i = 1; i < maxWindowIdx; i++) {
+  for (let i = 1; i < endWindowIdx; i++) {
     // previous index value to be excluded
     let notIncludedInWindowSum = nums[i - 1];
     // last idx value of current windwow
