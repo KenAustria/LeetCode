@@ -1,5 +1,6 @@
 // Runtime: 56ms
-// Time complexity: O(n)
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 // Memory: 35MB
 const twoSum = function(nums, target) {
 	// declare host hash
