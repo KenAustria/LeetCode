@@ -1,5 +1,6 @@
 // Runtime: 76ms
-// Time complexity: O(1)
+// Time Complexity: O(1)
+// Space Complexity: O(1)
 // Memory: 42.6MB
 const containsDuplicate = function(nums) {
 	// declare host hash
