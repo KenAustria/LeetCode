@@ -4,7 +4,7 @@
 // Space Complexity: O(n)
 // Memory: 44.3MB
 
-var sortedArrayToBST = (nums, start = 0, end = nums.length - 1) => {
+const sortedArrayToBST = (nums, start = 0, end = nums.length - 1) => {
   // since nums array is sorted ascendingly, start should always be <= to end
   if (start <= end) {
     // declare variables
