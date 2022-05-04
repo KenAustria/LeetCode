@@ -1,6 +1,6 @@
 // Technique: Nested For Loops
 // Runtime: 62ms
-// Time Complexity: O(n)
+// Time Complexity: O(n²)
 // Space Complexity: O(n)
 // Memory: 42.3MB
 
