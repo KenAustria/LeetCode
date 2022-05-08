@@ -14,7 +14,7 @@ const majorityElement = nums => {
     numsHash[nums[i]] = numsHash[nums[i]] + 1 || 1;
 
     // find existing majority element
-    if (numsHash[nums[i]] > nums.length > 2) return nums[i];
+    if (numsHash[nums[i]] > (nums.length > 2)) return nums[i];
   }
 };
 
