@@ -5,6 +5,8 @@
 // Memory: 43MB
 
 const singleNumber = nums => {
+  // ^ refers to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR
+  // whenever i see a new value, include its bit, else remove its bit
   return nums.reduce((prev, curr) => prev ^ curr);
 };
 
