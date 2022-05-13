@@ -6,6 +6,7 @@ const containsNearbyDuplicate = (nums, k) => {
   const numsMap = new Map();
 
   for (let i = 0; i < nums.length; i++) {
+		// if number has already occurred && if our current index is <= k
     if (numsMap.hasOwnProperty(nums[i]) && i - numsMap.get(nums[i] <= k)) {
       return true;
     }
