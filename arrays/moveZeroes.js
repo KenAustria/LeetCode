@@ -1,4 +1,3 @@
-// Technique:
 // Runtime: 84ms
 // Time Complexity: O(n)
 // Space Complexity: O(1)
@@ -16,9 +15,9 @@ const moveZeroes = nums => {
 
   // fill the rest of the array with 0s
   // iterate nums starting at where index left off from first for loop
-  for (let j = index; index < nums.length; index++) {
+  for (let j = index; j < nums.length; j++) {
     // assign 0 as value to the index of where we left of from first loop
-    nums[index] = 0;
+    nums[j] = 0;
   }
 
   return nums;
