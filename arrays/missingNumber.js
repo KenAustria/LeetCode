@@ -1,4 +1,3 @@
-// Technique:
 // Runtime: 109ms
 // Time Complexity: O(n)
 // Space Complexity: O(n)
@@ -17,5 +16,6 @@ const missingNumber = nums => {
   return res.indexOf(-1);
 };
 
-console.log(); // [1,3,12,0,0]
-console.log(); // [0]
+console.log(missingNumber([3, 0, 1])); // 2
+console.log(missingNumber([0, 1])); // 2
+console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // 8
