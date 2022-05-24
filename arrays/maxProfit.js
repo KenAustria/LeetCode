@@ -4,8 +4,8 @@
 // Memory: 35.4MB
 const maxProfit = prices => {
   let max = 0;
-  let min = Number.MAX_VALUE;
-  for (let i = 0; i < prices.length; i += 1) {
+  let min = Infinity;
+  for (let i = 0; i < prices.length; i++) {
     if (prices[i] < min) {
       min = prices[i];
     } else {
