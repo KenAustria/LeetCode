@@ -1,4 +1,3 @@
-// LINEAR
 // Runtime: 60ms
 // Time Complexity: O(n)
 // Space Complexity: O(n)
@@ -13,9 +12,10 @@ const maxSubArray = nums => {
     currSum = Math.max(0, currSum);
     // add current index value to current sum
     currSum += nums[i];
-    // if current sum is greater than maximum sum, assing current sum to maximum sum
+    // if current sum is greater than maximum sum, assign current sum to maximum sum
     maxSum = Math.max(maxSum, currSum);
   }
+
   return maxSum;
 };
 
