@@ -1,6 +1,6 @@
 // Runtime: 120ms
-// Time Complexity:
-// Space Complexity:
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 // Memory: 41.6MB
 
 const isValid = str => {
