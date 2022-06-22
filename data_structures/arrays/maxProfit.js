@@ -1,7 +1,8 @@
 // Runtime: 72ms
-// Time complexity: O(n)
+// Time Complexity: O(n)
 // Space Complexity: O(1)
 // Memory: 35.4MB
+
 const maxProfit = prices => {
   let max = 0;
   let min = Infinity;

@@ -1,9 +1,0 @@
-SLIDING WINDOW
-  What Data Structures To Use On:
-    arrays, linked list, strings
-  Why Use This Technique:
-    • brute force approach performs double traversals over values already iterated, results in time complexity of O(n^2)
-    • decreases time complexity by performing linear traversals
-  Candidate For Technique
-    • contiguous sequence of elements
-    • calculations (i.e. = min, max, longest, shortest, contained within)
