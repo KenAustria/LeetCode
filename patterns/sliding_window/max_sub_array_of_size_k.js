@@ -4,18 +4,19 @@ Space Complexity: O(1)
 */
 
 const max_sub_array_of_size_k = (k, arr) => {
-  let maxSum = 0,
+  // declare variables
+	let maxSum = 0,
     windowSum = 0,
     windowStart = 0;
 
   for (window_end = 0; window_end < arr.length; window_end++) {
-    // add the next element
+    // accumulate window sum with the next element
     windowSum += arr[window_end];
 
     // slide the window, no need to slide if we've not hit the window size of 'k'
     if (window_end >= k - 1) {
       maxSum = Math.max(maxSum, windowSum);
-      // subtract the element going out
+      // subtract the element going out from window sum
       windowSum -= arr[windowStart];
       // slide the window ahead
       windowStart += 1;
