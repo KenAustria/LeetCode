@@ -4,12 +4,13 @@ Space Complexity: O(1)
 */
 
 const smallest_subarray_sum = (s, arr) => {
+  // declare variables
   let windowSum = 0,
     minLength = Infinity,
     windowStart = 0;
 
   for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-    // add the next element
+    // accumulate window sum with the next element
     windowSum += arr[windowEnd];
 
     // shrink the window as small as possible until the 'window_sum' is smaller than 's'
