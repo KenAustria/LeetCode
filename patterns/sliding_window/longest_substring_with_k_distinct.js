@@ -11,9 +11,11 @@ const longest_substring_with_k_distinct = (str, k) => {
   // in the following loop we'll try to extend the range [windowStart, windowEnd]
   for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
     const rightChar = str[windowEnd];
+    // if rightChar is not in charFrequency HashMap, set count to zero
     if (!(rightChar in charFrequency)) {
       charFrequency[rightChar] = 0;
     }
+    // otherwise increment count
     charFrequency[rightChar] += 1;
 
     // shrink the sliding window, until we are left with 'k' distinct characters in the char_frequency
