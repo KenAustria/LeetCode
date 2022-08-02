@@ -1,0 +1,41 @@
+/*
+Time Complexity: O(N)
+Space Complexity: O(K)
+*/
+
+const non_repeat_substring = str => {
+  // declare variables
+  let windowStart = 0,
+    maxLength = 0,
+    charIndexMap = {};
+
+  // try to extend the range [windowStart, windowEnd]
+  for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
+    const rightChar = str[windowEnd];
+    // if the map already contains the 'rightChar', shrink the window from the beginning
+    // so that we have only one occurrence of 'rightChar'
+    if (rightChar in charIndexMap) {
+      // in the current window, we will not have any 'rightChar' after its previous index
+      // and if 'windowStart' is already ahead of the last index of 'rightChar',
+      // we'll keep 'windowStart'
+      // *edge case: str = "abba"
+      windowStart = Math.max(windowStart, charIndexMap[rightChar] + 1);
+    }
+    // insert the 'rightChar' into the map
+    charIndexMap[rightChar] = windowEnd;
+    // remember the maximum length so far
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+  }
+  return maxLength;
+};
+
+console.log(`Length of the longest substring: ${non_repeat_substring('abba')}`); // 2
+console.log(
+  `Length of the longest substring: ${non_repeat_substring('aabccbb')}`
+); // 3
+console.log(
+  `Length of the longest substring: ${non_repeat_substring('abbbb')}`
+); // 2
+console.log(
+  `Length of the longest substring: ${non_repeat_substring('abccde')}`
+); // 3
