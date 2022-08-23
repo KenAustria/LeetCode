@@ -3,7 +3,7 @@ Time Complexity: O(N)
 Space Complexity: O(1)
 */
 
-const remove_element = arr => {
+const removeElement = arr => {
 	// keeps track of length of non duplicate elements
 	let nextNonDuplicate = 1
 
@@ -21,5 +21,5 @@ const remove_element = arr => {
 	return nextNonDuplicate
 }
 
-console.log(remove_element([2, 3, 3, 3, 6, 9, 9])); // 4
-console.log(remove_element([2, 2, 2, 11])); // 2
+console.log(removeElement([2, 3, 3, 3, 6, 9, 9])); // 4
+console.log(removeElement([2, 2, 2, 11])); // 2
