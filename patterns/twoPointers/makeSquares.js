@@ -3,7 +3,7 @@ Time Complexity: O(N)
 Space Complexity: O(N)
 */
 
-const make_squares = arr => {
+const makeSquares = arr => {
 	// declare variables
 	const n = arr.length
 	let squares = Array(n).fill(0)
@@ -32,5 +32,5 @@ const make_squares = arr => {
 	return squares
 }
 
-console.log(`Squares: ${make_squares([-2, -1, 0, 2, 3])}`); // [0, 1, 4, 4, 9]
-console.log(`Squares: ${make_squares([-3, -1, 0, 1, 2])}`); // [0, 1, 1, 4, 9]
+console.log(`Squares: ${makeSquares([-2, -1, 0, 2, 3])}`); // [0, 1, 4, 4, 9]
+console.log(`Squares: ${makeSquares([-3, -1, 0, 1, 2])}`); // [0, 1, 1, 4, 9]
