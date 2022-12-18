@@ -11,8 +11,7 @@ class TreeNode {
 	}
 }
 
-
-function hasPath(root, sum) {
+const hasPath = (root, sum) => {
 	if (root === null) {
 		return false;
 	}
