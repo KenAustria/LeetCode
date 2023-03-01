@@ -16,7 +16,7 @@ queue.
 
     Finally, the function returns the result array, which contains the level order traversal of the binary tree.
 
-    Time = O(n) , Space = O(n)
+    Time = O(n), Space = O(n)
     The time complexity of this solution is O(N), where N is the number of nodes in the binary tree. This is because the solution traverses
 each node in the tree exactly once.
 
