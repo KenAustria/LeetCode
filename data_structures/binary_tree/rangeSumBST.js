@@ -1,4 +1,5 @@
 /*
+DFS
     The rangeSumBST function calculates the sum of the node values in a binary search tree that fall within a certain range.
 
     It first initializes a variable called sum to 0. It then defines a helper function called dfs that takes a node as an argument.
@@ -8,6 +9,13 @@ dfs checks if the node is null. If it is, the function simply returns.
 right subtree if the node value is less than high and explores the left subtree if the node value is greater than low.
 
     Finally, dfs is called with the root node, and the function returns the sum of all the node values that fall within the range.
+
+    This is a depth first search because it explores the nodes in a depth-first manner. The helper function dfs recursively explores
+the tree in depth-first order, starting from the root node. It first checks if the current node is null, and if it is, it returns
+without doing anything. Then it checks if the current node's value is within the given range [low, high], and if it is, it adds the
+node's value to the sum. After that, it recursively explores the right subtree if the current node's value is less than high, and the 
+left subtree if the current node's value is greater than low. This exploration process follows the depth-first search traversal method,
+where it explores the entire depth of a subtree before moving on to its siblings or their children.
 
 Time = O(n), Space = O(h)
     The time complexity of this solution is O(n), where n is the number of nodes in the tree. This is because the solution performs a
@@ -49,5 +57,5 @@ const rangeSumBST = (root, low, high) => {
   
     // Return the sum
     return sum;
-  };
+};
   
