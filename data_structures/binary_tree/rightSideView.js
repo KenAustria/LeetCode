@@ -29,7 +29,7 @@ O(n/2) = O(n).
 
 // Define a function to traverse a binary tree from right to left, and return an array
 // containing the rightmost node values for each level of the tree.
-const rightSideView = function(root) {
+const rightSideView = root => {
     // If the root is null, return an empty array.
     if (!root) return [];
     
