@@ -171,3 +171,81 @@ const invertTree = root => {
     // Return the root of the inverted tree
     return root
 }
+
+/*
+    The solution starts by initializing a stack array with the root node.
+    stack = [root]
+
+    The while loop begins and continues until the stack is empty. At each iteration, it pops the last node from the stack and swaps
+its left and right child nodes.
+
+    iteration 1:
+    stack = []
+    node = 9
+    temp = node.left = null
+    node.left = node.right = null
+    if (node.left) -> false
+    if (node.right) -> false
+
+    iteration 2:
+    stack = [6, 3]
+    node = 7
+    temp = node.left = 6
+    node.left = node.right = 9
+    node.right = temp = 6
+    if (node.left) -> true, push to stack: [6]
+    if (node.right) -> true, push to stack: [6, 3]
+
+    iteration 3:
+    stack = [6]
+    node = 3
+    temp = node.left = null
+    node.left = node.right = null
+    if (node.left) -> false
+    if (node.right) -> false
+
+    iteration 4:
+    stack = [6, 1]
+    node = 2
+    temp = node.left = 1
+    node.left = node.right = 3
+    node.right = temp = 1
+    if (node.left) -> true, push to stack: [6, 1]
+    if (node.right) -> true, push to stack: [6, 1, 3]
+
+    iteration 5:
+    stack = [6, 1, 3]
+    node = 6
+    temp = node.left = null
+    node.left = node.right = null
+    if (node.left) -> false
+    if (node.right) -> false
+
+    iteration 6:
+    stack = [6, 1]
+    node = 3
+    temp = node.left = null
+    node.left = node.right = null
+    if (node.left) -> false
+    if (node.right) -> false
+
+    iteration 7:
+    stack = [6]
+    node = 1
+    temp = node.left = null
+    node.left = node.right = null
+    if (node.left) -> false
+    if (node.right) -> false
+
+    iteration 8:
+    stack = []
+    node = 4
+    temp = node.left = 2
+    node.left = node.right = 7
+    node.right = temp = 2
+    if (node.left) -> true, push to stack: [2]
+    if (node.right) -> true, push to stack: [2, 7]
+
+    After all the iterations, the function returns the modified root node, which now has its left and right subtrees inverted.
+    root = [4, 7, 2, 9, 6, 3, 1]
+*/
