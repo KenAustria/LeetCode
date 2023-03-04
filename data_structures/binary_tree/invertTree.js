@@ -56,6 +56,63 @@ const invertTree = root => {
     return root;
 };
 
+/*  HOW VALUES CHANGE WITH EACH ITERATION
+    The invertTree function takes in a binary tree represented as a root node and returns the same tree with all left and 
+right child nodes swapped. Here's how the input tree root = [4,2,7,1,3,6,9] is transformed with each iteration of the while loop:
+
+    Iteration 1:
+    queue = [4]
+    node = 4
+    Swap the left and right child nodes of node
+    node = { val: 4, left: 7, right: 2 }
+    Add the left and right child nodes of node to queue
+    queue = [7, 2]
+
+    Iteration 2:
+    queue = [7, 2]
+    node = 7
+    Swap the left and right child nodes of node (there are no child nodes to swap)
+    Add the left and right child nodes of node to queue (there are no child nodes to add)
+    node = 2
+    Swap the left and right child nodes of node
+    node = { val: 2, left: 9, right: 6 }
+    Add the left and right child nodes of node to queue
+    queue = [2, 9, 6]
+
+    Iteration 3:
+    queue = [2, 9, 6]
+    node = 2
+    Swap the left and right child nodes of node (there are no child nodes to swap)
+    Add the left and right child nodes of node to queue (there are no child nodes to add)
+    node = 9
+    Swap the left and right child nodes of node (there are no child nodes to swap)
+    Add the left and right child nodes of node to queue (there are no child nodes to add)
+    node = 6
+    Swap the left and right child nodes of node (there are no child nodes to swap)
+    Add the left and right child nodes of node to queue (there are no child nodes to add)
+    queue = [9, 6]
+
+    Iteration 4:
+    queue = [9, 6]
+    node = 9
+    Swap the left and right child nodes of node (there are no child nodes to swap)
+    Add the left and right child nodes of node to queue (there are no child nodes to add)
+    node = 6
+    Swap the left and right child nodes of node (there are no child nodes to swap)
+    Add the left and right child nodes of node to queue (there are no child nodes to add)
+    queue = [6]
+
+    Iteration 5:
+    queue = [6]
+    node = 6
+    Swap the left and right child nodes of node (there are no child nodes to swap)
+    Add the left and right child nodes of node to queue (there are no child nodes to add)
+    queue = []
+
+    The while loop exits when the queue is empty, and the function returns the original root node with all left and right child nodes
+swapped, which is [4,7,2,9,6,3,1].
+*/
+
 // --------------------------------------------------------------------------------------------------------------------
 
 /*
