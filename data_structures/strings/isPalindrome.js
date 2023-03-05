@@ -20,7 +20,7 @@ structures or use recursion, so its space complexity is constant.
 */
 
 // Define function called isPalindrome that takes a string s as an argument
-function isPalindrome(s) {
+const isPalindrome = s => {
   // Convert the string to lowercase and remove any non-alphanumeric characters
   s = s.toLowerCase().replace(/[^a-z0-9]/g, '');
   
