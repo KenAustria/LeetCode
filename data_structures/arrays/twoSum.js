@@ -20,7 +20,7 @@ target value when it finds a complement.
 */
 
 /*
-TIME AND SPACE COMPLEXITY
+TIME AND SPACE COMPLEXITY 
   Time = O(n), Space = O(n)
   The time complexity of this function is O(n) because it has a single loop that iterates through the nums array once. The operations
 inside the loop, which include accessing and assigning values in the complements object, are constant time operations.
@@ -53,5 +53,17 @@ const twoSum = (nums, target) => {
 
 /*
 HOW THE VALUES CHANGE IN EACH ITERATION
+  Iteration 1:
+  nums[i] = 2
+  complement = target - nums[i] = 9 - 2 = 7
+  complements = {}
+  complements[complement] = undefined
+  complements[nums[i]] = complements[2] = 0
 
+  Iteration 2:
+  nums[i] = 7
+  complement = target - nums[i] = 9 - 7 = 2
+  complements = {2: 0}
+  complements[complement] = complements[2] = 0
+  return [complements[complement], i] = [0, 1]
 */
