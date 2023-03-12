@@ -1,4 +1,5 @@
 /*
+SOLUTION EXPLANATION
     This is a function that performs an operation on a binary tree using Breadth First Search (BFS) algorithm. The input is the root
 node of a binary tree. The function first checks if the root is empty. If it is, the function returns the empty root. If the root node
 is not empty, the function defines a queue and pushes the root node to it.
@@ -18,7 +19,10 @@ left and right children (if they exist) to the back of the queue. This ensures t
 order. The process continues until the queue is empty, and the inverted tree is returned.
 
     By using a queue data structure, this algorithm explores nodes level by level, making it a breadth first search traversal of the tree.
+*/
 
+/*
+TIME AND SPACE COMPLEXITY
 Time = O(n), Space = O(n)
     The time complexity of this code is O(n), where n is the number of nodes in the binary tree. This is because the algorithm has to visit
 every node in the tree exactly once to invert it. Specifically, the while loop iterates once for each node in the tree.
@@ -56,7 +60,8 @@ const invertTree = root => {
     return root;
 };
 
-/*  HOW VALUES CHANGE WITH EACH ITERATION
+/*  
+HOW VALUES CHANGE WITH EACH ITERATION
     The invertTree function takes in a binary tree represented as a root node and returns the same tree with all left and 
 right child nodes swapped. Here's how the input tree root = [4,2,7,1,3,6,9] is transformed with each iteration of the while loop:
 
