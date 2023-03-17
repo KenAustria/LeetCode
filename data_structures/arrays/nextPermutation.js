@@ -20,21 +20,20 @@ const nextPermutation = nums => {
       i--;
     }
 
-    // If we haven't reached the start of the array, we've found a pivot: reference point to divide into two parts
     if (i >= 0) {
       let j = nums.length - 1;
-      // Iterate backwards through 'nums' until we find an element greater than the pivot
-      // ex: if nums = [1,2,3], then nums[i] = 2 and nums[j] = 3
+      // If we haven't reached the start of the array, we've found a pivot: reference point to divide into two parts
       while (j >= 0 && nums[j] <= nums[i]) {
+        // Iterate backwards through 'nums' until we find an element greater than the pivot
         j--;
       }
       // Swap the pivot with the greater element
-      // ex: since 3 > 2, then we swap resulting to [1,3,2]
       [nums[i], nums[j]] = [nums[j], nums[i]];
     }
   
     // Reverse the subarray to the right of the pivot
-    let left = i + 1, right = nums.length - 1;
+    let left = i + 1
+    let right = nums.length - 1;
     while (left < right) {
       [nums[left], nums[right]] = [nums[right], nums[left]];
       left++;
