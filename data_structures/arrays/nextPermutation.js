@@ -12,27 +12,28 @@ array. Therefore, the space used by the algorithm is constant and does not depen
 // Find the next possible arrangement of its elements such that it is greater than the current arrangement,
 // and if there are no more greater permutations available, then we need to rearrange the array in its lowest possible order.
 const nextPermutation = nums => {
-    // Find the index where the array starts decreasing. Ex: If [1, 3, 5, 4, 2], then modify [5, 4, 2]
+    // Ensure that there are at least two more elements in the array after the current element being considered.
+    // because starting at the last index, would result in not enough elements left in the array to form a triplet.
+    // Find the index where the array starts decreasing. ex: If [1, 3, 5, 4, 2], then modify [5, 4, 2]
     let i = nums.length - 2;
     while (i >= 0 && nums[i] >= nums[i + 1]) {
       i--;
     }
 
-    // Find the next greater permutation of the given array by finding the first decreasing element
-    // from the end of the array and swap it with the next larger element from the end of the array. 
+    // If we haven't reached the start of the array, we've found a pivot: reference point to divide into two parts
     if (i >= 0) {
-      // Find the first element j that is greater than i - 1
-        // Ex: if nums = [1,2,3], then nums[i] = 2 and nums[j] = 3
       let j = nums.length - 1;
+      // Iterate backwards through 'nums' until we find an element greater than the pivot
+      // ex: if nums = [1,2,3], then nums[i] = 2 and nums[j] = 3
       while (j >= 0 && nums[j] <= nums[i]) {
         j--;
       }
-      // Since 3 > 2, then we swap resulting to [1,3,2]
+      // Swap the pivot with the greater element
+      // ex: since 3 > 2, then we swap resulting to [1,3,2]
       [nums[i], nums[j]] = [nums[j], nums[i]];
     }
   
-    // If the next lexicographically greater permutation of its integer is unavailable,
-    // rearrange as the lowest possible order (i.e., sorted in ascending order). [3,2,1] to [1,2,3]
+    // Reverse the subarray to the right of the pivot
     let left = i + 1, right = nums.length - 1;
     while (left < right) {
       [nums[left], nums[right]] = [nums[right], nums[left]];
