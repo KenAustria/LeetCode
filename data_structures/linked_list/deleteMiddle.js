@@ -15,7 +15,7 @@ the linked list, and these variables do not increase in size as the input linked
 // Define function deleteMiddleNode with head as parameter
 const deleteMiddle = head => {
     // If head is null or there's only one node in the list, return head
-    if (!head || !head.next) return head;
+    if (!head || !head.next) return null;
   
     // Initialize two pointers, slow and fast
     let slow = head;
