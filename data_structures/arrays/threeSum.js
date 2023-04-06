@@ -58,7 +58,7 @@ IMPROVEMENTS AND PATTERN IDENTIFICATION
 		The first improvement is to sort the input array in ascending order and use two nested loops to iterate over the array. One loop
 	will go through the array from the beginning to the end, and the other loop will go from the current index to the end. We can use a
 	binary search to find the third number that will make the sum equal to zero. This will reduce the time complexity from O(n^3) to
-	O(n^2 log n), which means it will be much faster for larger input arrays.
+	O(n^2), which means it will be much faster for larger input arrays.
 
 		The second improvement is to eliminate duplicate values in the input array before starting the calculation. We can sort the array
 	and then skip duplicate values while iterating over it. This will simplify the duplicate checking process and reduce the number of
@@ -70,7 +70,7 @@ IMPROVEMENTS AND PATTERN IDENTIFICATION
 	a characteristic of the Two Pointers technique, as it involves scanning through the array to compare and remove duplicate values.
 	Therefore, given the suggested improvements, we can use the Two Pointers technique to solve the problem more efficiently.
 
-TIME AND SPACE COMPLEXITY
+BIG-O
 	Time = O(n^2), Space = O(n)
 		The time complexity of the threeSum algorithm is O(n^2), where n is the length of the input array nums. The reason for this is
 	that the algorithm uses a nested loop to iterate over all possible pairs of numbers in the input array, which gives an overall time
