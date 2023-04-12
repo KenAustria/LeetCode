@@ -48,49 +48,48 @@ const minMeetingRooms = intervals => {
 
 /*
 IMPROVEMENTS AND PATTERN IDENTIFICATION
-        To find the minimum number of conference rooms required to hold a set of meetings, we can use a priority queue to sort the
-    intervals by start time and keep track of the end times of meetings in a separate queue. By removing end times from the queue
-    when we encounter meetings that have started later than the earliest end time, we can find the maximum size of the queue, which
-    gives us the minimum number of conference rooms required.
+        We can first sort the intervals in ascending order based on their start times, which helps to keep track of the end times of
+    meetings currently in progress, so that we can quickly determine if a new meeting needs a new room or if it can fit in an existing
+    room. 
+    
+        We use two pointers to keep track of the start and end times of each meeting, enabling it to only compare each meeting to the
+    next meeting in the sorted list. This helps to determine if a new meeting needs a new room or can fit in an existing room quickly,
+    making the comparison process faster and achieving a better time complexity.
 
 BIG-O
-     Time = O(nlogn) , Space = O(n)
-        The time complexity of this function is O(n log n) because it involves sorting the intervals array using a comparison function
-    that takes O(log n) time to compare each pair of elements, and then looping through the array once, which takes O(n) time.
-    Therefore, the total time complexity is O(n log n).
-        The space complexity of this function is O(n), where n is the length of the input array intervals. This is because the function
-    uses an additional array endTimes to store the end times of each meeting and this array could potentially store all n end times.
-    The space complexity is further optimized by only storing the end times that are relevant to the current meeting being processed,
-    resulting in a smaller maximum size of the endTimes array.
+    Time = O(nlogn) , Space = O(n)
+    The time complexity of this solution is O(n log n), where n is the number of intervals. This is because we are performing two separate
+sorts on the start and end times, which both take O(n log n) time in the worst case. We also iterate through the intervals array once,
+which takes O(n) time. Therefore, the overall time complexity is O(n log n).
+
+    The space complexity is O(n), where n is the number of intervals. This is because we are creating two separate arrays of start and end
+times, each of which has length n. We are also using two integer variables to keep track of the room count and the end pointer, which takes
+constant space. Therefore, the overall space complexity is O(n).
 */
 
-// https://leetcode.com/problems/meeting-rooms-ii/description/
-// Function takes an array of intervals representing meetings and returns the minimum number of conference rooms required to schedule
-//   all the meetings without any overlap.
+// Define a function named minMeetingRooms that takes an array of meeting time intervals as input
 const minMeetingRooms = intervals => {
-    // Sort the intervals array in ascending order based on the start time of each meeting
-    intervals.sort((a, b) => a[0] - b[0]);
-    
-    // Initialize an empty array to store the end times of each meeting, and a variable to keep track of the maximum number of rooms needed
-    const endTimes = [];
-    let maxRooms = 0;
-  
-    // Loop through each meeting in the intervals array
-    for (let i = 0; i < intervals.length; i++) {
-      // While there are meetings that have already ended and their end times are earlier than the start time of the current meeting,
-      // remove them from the endTimes array
-      while (endTimes.length > 0 && intervals[i][0] >= endTimes[0]) {
-        endTimes.shift();
-      }
-      
-      // Add the end time of the current meeting to the endTimes array
-      endTimes.push(intervals[i][1]);
-      
-      // Update maxRooms to the maximum number of rooms needed so far
-      maxRooms = Math.max(maxRooms, endTimes.length);
+    // If the intervals array is undefined or empty, return 0
+    if (!intervals || intervals.length < 1) return 0;
+
+    // Initialize the room count and the end pointer to 0
+    let rooms = 0;
+    let end = 0;
+
+    // Extract the start and end times of each meeting into separate arrays, sort them in ascending order
+    const starts = intervals.map(a => a[0]).sort((a, b) => a - b);
+    const ends = intervals.map(a => a[1]).sort((a, b) => a - b);
+
+    // Iterate through the intervals array using a for loop
+    for(let i = 0; i < intervals.length; i++) {
+        // If the start time of the current meeting is less than the end time of the meeting that currently has the earliest end time, increment the room count
+        if(starts[i] < ends[end]) {
+            rooms++;
+        } else { // Otherwise, increment the end pointer to move on to the next meeting that finishes earliest
+            end++;
+        }
     }
-  
-    // Return the maximum number of rooms needed
-    return maxRooms;
-  };
-  
+
+    // Return the room count
+    return rooms;
+};
